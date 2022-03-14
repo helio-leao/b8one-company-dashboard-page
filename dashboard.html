@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>b8one - dashboard</title>
+
+    <link rel="stylesheet" href="./assetts/css/dashboard.css">
+    <link rel="stylesheet" href="./assetts/css/dashboard-mobile.css">
+
+    <script defer src="./scripts/loginValidation.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="./scripts/mocks/Icons.js"></script>
+    <script defer src="./scripts/mocks/Submenus.js"></script>
+    <script defer src="./scripts/mocks/Charts.js"></script>
+    <script defer src="./scripts/dashboard.js"></script>
+</head>
+
+<body>
+
+    <header class="top-bar">
+
+        <button class="hamburger-button">
+            <span class="hamburger-button__line"></span>
+        </button>
+
+        <div class="organization-block">
+            <a href="#" class="organization-link">       
+            </a>
+        </div>
+
+        <div class="nav-user">
+            <div class="help-menu">
+                <button class="help-menu__button">
+                    <svg class="help__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9.09003 9.00002C9.32513 8.33169 9.78918 7.76813 10.4 7.40915C11.0108 7.05018 11.7289 6.91896 12.4272 7.03873C13.1255 7.15851 13.7588 7.52154 14.2151 8.06355C14.6714 8.60555 14.9211 9.29154 14.92 10C14.92 12 11.92 13 11.92 13" stroke="#142159" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M12 17H12.0094" stroke="#142159" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="help-menu-dropdown">
+                    <a class="help-menu-dropdown__help-link" href="#">Central de Ajuda</a>
+                    <a class="help-menu-dropdown__tutorials-link" href="#">Tutoriais</a>
+                    <hr class="help-help-menu-dropdown__divider">
+                    <a class="help-menu-dropdown__contact-link" href="#">Falar com Especialista</a>
+                </div>
+            </div>
+            
+            <div class="notification-menu">
+                <button class="notification-menu__button">
+                    <svg class="notification__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.5 8.40096C17.5 6.96853 16.9205 5.59478 15.8891 4.5819C14.8576 3.56903 13.4587 3 12 3C10.5413 3 9.14236 3.56903 8.11091 4.5819C7.07946 5.59478 6.5 6.96853 6.5 8.40096C6.5 14.7021 3.75 16.5024 3.75 16.5024H20.25C20.25 16.5024 17.5 14.7021 17.5 8.40096Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M13.5859 20.1028C13.4248 20.3756 13.1934 20.6021 12.9151 20.7595C12.6368 20.9169 12.3213 20.9998 12.0001 20.9998C11.6789 20.9998 11.3634 20.9169 11.085 20.7595C10.8067 20.6021 10.5754 20.3756 10.4142 20.1028" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="notification__alert notification__alert--active"></span>                     
+                </button>
+                <div class="notification-menu-dropdown">
+                    <ul class="notification-menu-dropdown__list">
+                        <li class="notification-menu-dropdown__item">
+                            <div class="notification-menu-dropdown-title">
+                                <img src="./assetts/images/greetings-icon.png" alt="greetings icon" class="notification-menu-dropdown-title__icon">
+                                <span class="notification-menu-dropdown-title__text">
+                                    Bem-vindo(a) a Hubly Retailer
+                                </span>
+                                <span class="notification-menu-dropdown-title__when">
+                                    10 min
+                                </span>
+                                <span class="notification-menu-dropdown-title__new notification-menu-dropdown-title__new--show"></span>
+                            </div>
+                            <div class="notification-menu-dropdown-description">
+
+                                <div class="notification-menu-dropdown-description-options">
+                                    <span class="notification-menu-dropdown-description-options__description">
+                                        Para uma completa experiência com 
+                                        a Retailer, precisamos que você siga 
+                                        os passos abaixo.
+                                    </span>
+
+                                    <ul class="notification-menu-dropdown-description-options__list">
+                                        <li class="notification-menu-dropdown-description-options__item">
+                                            <input class="notification-menu-dropdown-description-options-checkbox__input" type="checkbox" id="organization" name="organization" value="organization">
+                                            <label class="notification-menu-dropdown-description-options-checkbox__label" for="organization"> Cadastrar Organização</label>
+                                            <svg class="notification-menu-dropdown-description-options-checkbox__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.5834 4.08325L5.28127 9.91659L2.41669 7.26507" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>                                                
+                                        </li>
+                                        <li class="notification-menu-dropdown-description-options__item">
+                                            <input class="notification-menu-dropdown-description-options-checkbox__input" type="checkbox" id="resellers" name="resellers" value="resellers">
+                                            <label class="notification-menu-dropdown-description-options-checkbox__label" for="resellers"> Convidar Revendedores</label>
+                                            <svg class="notification-menu-dropdown-description-options-checkbox__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.5834 4.08325L5.28127 9.91659L2.41669 7.26507" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>                                                
+                                        </li>
+                                    </ul>
+
+                                    <a href="#" class="notification-menu-dropdown-description-options__link">
+                                        Vamos lá!
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="notification-menu-dropdown__item">
+                            <div class="notification-menu-dropdown-title">
+                                <img src="./assetts/images/notification-icon.png" alt="notification icon" class="notification-menu-dropdown-title__icon">
+                                <span class="notification-menu-dropdown-title__text">
+                                    O seu Relatório Mensal está pronto!
+                                </span>
+                                <span class="notification-menu-dropdown-title__when">
+                                    12 min
+                                </span>
+                                <span class="notification-menu-dropdown-title__new"></span>
+                            </div>
+                            <div class="notification-menu-dropdown-description">
+                                <a href="#" class="notification-menu-dropdown-description__link">
+                                    Ir para Relatórios
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <button class="notification-menu-dropdown__mark-read-button">Marcar como Lidas</button>
+                </div>
+            </div>
+
+            <div class="user-menu">
+                <button class="user-menu__button">        
+                </button>
+                <div class="user-menu-dropdown">
+                    <span class="user-menu-dropdown__greetings-span">Henrique</span>
+                    <a class="user-menu-dropdown__account-link" href="#">Minha Conta</a>
+                    <button class="user-menu-dropdown__logout-button">Sair</button>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+
+    <div class="main-container">
+
+        <aside class="side-bar"> <!-- side-bar--show -->
+            <nav class="menu">
+                <ul class="menu__list">
+                </ul>
+            </nav>
+
+            <div class="upsell-card">
+                <img class="upsell-card__image" src="./assetts/images/upsell-icon.png" alt="upsell-icon" class="upsell-card__icon">
+                <span class="upsell-card__description">
+                    Libere novos recursos e decole seu negócio
+                </span>
+                <a href="#" class="upsell-card__link">
+                    Faça um upgrade!
+                </a>
+            </div>
+        </aside>
+
+        <div class="main-block">
+
+            <div class="information-bar">
+                <svg class="information-bar__icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 23.732 8.26801 30 16 30Z" fill="#F1F2F9" stroke="#F1F2F9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 21.6V16" stroke="#425DC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 10.3996H16.012" stroke="#425DC7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <div class="information-bar-description">
+                    <span class="information-bar-description__title">
+                        🔥 Lançamento 🔥
+                    </span>
+                    <span class="information-bar-description__text">
+                        Nova Ferramenta de Carrinhos Abandonados 😍
+                    </span>
+                </div>
+                <a href="#" class="information-bar__link">
+                    Conheça a nova ferramenta
+                </a>
+            </div>
+
+            <section class="report">
+                <h1 class="report__title">
+                    Resumo de dados
+                </h1>
+                <div class="report-filter">
+                    <ul class="report-filter__list">
+                        <li class="report-filter__item">
+                            <button class="report-filter__button report-filter__button--active">
+                                Últimos 7 dias
+                            </button>
+                        </li>
+                        <li class="report-filter__item">
+                            <button class="report-filter__button">
+                                Últimos 15 dias
+                            </button>
+                        </li>
+                        <li class="report-filter__item">
+                            <button class="report-filter__button">
+                                Último mês
+                            </button>
+                        </li>
+                        <li class="report-filter__item">
+                            <button class="report-filter__button">
+                                Último ano
+                            </button>
+                        </li>
+                        <li class="report-filter__item">
+                            <button class="report-filter__button">
+                                Personalizado
+                                <svg class="report-filter__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.00016 6.5L8.00016 9.5L11.0002 6.5" stroke="#333333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>                                    
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter-info">
+                    <span class="filter-info__description">
+                        Exibindo dados do período
+                    </span>
+                    <span class="filter-info__period">
+                        1 de novembro à 8 de novembro de 2021 
+                    </span>
+                </div>
+
+                <div class="chart-block">
+                    <div class="report-column-one">
+                        <div class="chart-header">
+                            <img src="./assetts/images/chart-icon.png" alt="chart-icon" class="chart__icon">
+                            <h1 class="chart__title">Relatório geral</h1>
+                        </div>
+    
+                        <div class="report-type">
+                            <ul class="report-type__list">
+                                <li class="report-type__item">
+                                    <button id="vendas" class="report-type__button report-type__button--active">
+                                        Vendas
+                                    </button>
+                                </li>
+                                <li class="report-type__item">
+                                    <button id="pedidos" class="report-type__button">
+                                        Pedidos
+                                    </button>
+                                </li>
+                                <li class="report-type__item">
+                                    <button id="revendedores" class="report-type__button">
+                                        Revendedores
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+    
+                        <hr class="chart-block__divider">
+
+                        <div class="resellers-filter resellers-filter--hidden">
+                            <select name="resellersFilter" id="resellersFilter" class="resellers-filter__select">
+                                <option value="all" class="resellers-filter__option">
+                                    Mostrar todos os revendedores                                        
+                                </option>
+                            </select>
+                            <svg class="resellers-filter__icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.50024 9.75L12.0002 14.25L16.5002 9.75" stroke="#555555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+    
+                        <div class="report-data-cards">
+                            <ul class="report-data-cards__list">
+                                <li class="report-data-cards__item">
+                                    <svg class="report-data-cards__icon" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="48" height="48" rx="12" fill="#F1F2F9"/>
+                                        <path d="M24 37.3333C31.3638 37.3333 37.3333 31.3638 37.3333 24C37.3333 16.6362 31.3638 10.6667 24 10.6667C16.6362 10.6667 10.6667 16.6362 10.6667 24C10.6667 31.3638 16.6362 37.3333 24 37.3333Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M28 18.6667H22.8889C21.2933 18.6667 20 19.8606 20 21.3333C20 22.8061 21.2933 24 22.8889 24H25.1111C26.7067 24 28 25.1938 28 26.6667C28 28.1395 26.7067 29.3333 25.1111 29.3333H20" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M24 16V18.6667" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M24 29.3333L24 32" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <div class="report-data-cards-data">
+                                        <span class="report-data-cards-data__description">
+                                            Faturamento
+                                        </span>
+                                        <span class="report-data-cards-data__value report-data-cards-data__value--revenue">
+                                            0
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="report-data-cards__item">
+                                    <svg class="report-data-cards__icon" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.666656" width="48" height="48" rx="12" fill="#F1F2F9"/>
+                                        <path d="M17.5 12L13.6667 16.8V33.6C13.6667 34.2365 13.9359 34.847 14.4152 35.2971C14.8944 35.7471 15.5444 36 16.2222 36H34.1111C34.7889 36 35.4389 35.7471 35.9182 35.2971C36.3974 34.847 36.6667 34.2365 36.6667 33.6V16.8L32.8333 12H17.5Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M13.6667 16.8002H36.6667" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M30.2781 21.5999C30.2781 22.8739 29.7396 24.0957 28.7811 24.9965C27.8226 25.8974 26.5226 26.4035 25.167 26.4035C23.8115 26.4035 22.5114 25.8974 21.5529 24.9965C20.5944 24.0957 20.0559 22.8739 20.0559 21.5999" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                    
+                                    <div class="report-data-cards-data">
+                                        <span class="report-data-cards-data__description">
+                                            Vendas totais
+                                        </span>
+                                        <span class="report-data-cards-data__value report-data-cards-data__value--total-sales">
+                                            0
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="report-data-cards__item">
+                                    <svg class="report-data-cards__icon" width="49" height="48" viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="0.333313" width="48" height="48" rx="12" fill="#F1F2F9"/>
+                                        <path d="M37.8577 27.5374L27.8846 37.5105C27.6262 37.7691 27.3194 37.9743 26.9817 38.1143C26.644 38.2543 26.282 38.3264 25.9164 38.3264C25.5508 38.3264 25.1888 38.2543 24.8511 38.1143C24.5134 37.9743 24.2066 37.7691 23.9482 37.5105L12.5866 26.1621C12.211 25.7869 12 25.2779 12 24.747V13.6667C12 12.5621 12.8954 11.6667 14 11.6667H25.081C25.6114 11.6667 26.1202 11.8774 26.4952 12.2524L37.8577 23.6149C38.3758 24.1361 38.6666 24.8412 38.6666 25.5761C38.6666 26.3111 38.3758 27.0161 37.8577 27.5374Z" fill="#CDD2EB" stroke="#CDD2EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M20 19.6667H20.0133" stroke="#425DC7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                    
+                                    <div class="report-data-cards-data">
+                                        <span class="report-data-cards-data__description">
+                                            Ticket médio
+                                        </span>
+                                        <span class="report-data-cards-data__value report-data-cards-data__value--average-ticket">
+                                            0
+                                        </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="chart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="report-column-two">
+                        <div class="resellers-ranking">
+                            <h3 class="resellers-ranking__title">
+                                <img src="./assetts/images/trophy-icon.png" alt="trophy icon" class="resellers-ranking__icon">
+                                Ranking de revendedores
+                            </h3>
+
+                            <ul class="resellers-ranking__list">
+                               
+                            </ul>
+
+                            <hr class="report-column-two__divider">
+
+                            <div class="reseller-view-all-link">
+                                <a href="#" class="reseller-view-all-link__anchor">
+                                    Ver todos
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="insights">
+                <div class="insights-header">
+                    <img src="./assetts/images/insights-icon.png" alt="insights-icon" class="insights-icon">
+                    <h2 class="insights__title">
+                        Insights
+                    </h2>
+                </div>
+
+                <h3 class="insights-subtitle">
+                    Produtos mais vendidos
+                </h3>
+
+                <table class="insights-table">
+                    <thead class="table-head">
+                        <tr class="table-head__row">
+                            <th class="insights-table__header">Produto</th>
+                            <th class="insights-table__header"></th>
+                            <th class="insights-table__header">Número do Pedido</th>
+                            <th class="insights-table__header">Departamento</th>
+                            <th class="insights-table__header">Valor</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="table-body">
+                        
+                    </tbody>
+                </table>
+
+                <div class="insights-footer">
+                    <div class="insights-table-options">
+                        <span class="insights-table-options__label">Exibindo</span>
+                        <select class="insights-table-options__select" id="rowQuantitySelect">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                        </select>
+                        <span class="insights-table-options__description">
+                            produtos por pagina
+                        </span>
+                    </div>
+                    <div class="insights-table-navigation">
+                        <ul class="insights-table-navigation__list">
+                            <li class="insights-table-navigation__item">
+                                <button class="insights-table-navigation__button-prev">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#F1F2F9"/>
+                                        <path d="M13 9L10 12L13 15" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                
+                                </button>
+                            </li>
+                            <li class="insights-table-navigation__item">
+                                <button class="insights-table-navigation__button insights-table-navigation__button--active">
+                                    1                               
+                                </button>
+                            </li>
+                            <li class="insights-table-navigation__item">
+                                <button class="insights-table-navigation__button">
+                                    2                               
+                                </button>
+                            </li>
+                            <li class="insights-table-navigation__item">
+                                <button class="insights-table-navigation__button">
+                                    3                               
+                                </button>
+                            </li>
+                            <li class="insights-table-navigation__item">
+                                <button class="insights-table-navigation__button-next">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12Z" fill="#F1F2F9"/>
+                                        <path d="M10.9999 15L13.9999 12L10.9999 9" stroke="#425DC7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                                              
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

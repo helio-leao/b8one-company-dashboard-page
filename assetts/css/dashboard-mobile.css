@@ -1,0 +1,193 @@
+@media (max-width: 1178px) {
+    /* Hamburger Button */
+    .hamburger-button {
+        display: block;
+    }
+
+    /* Side Bar */
+    .side-bar {
+        position: fixed;
+        left: -244px;
+        transition: ease-in-out .3s;
+    }
+
+    .side-bar--show {
+        left: 0;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Top Bar */
+    .top-bar {
+        padding: 8px 16px;
+    }
+
+    .nav-user {
+        gap: 0 16px;
+    }
+
+    /* User Link */
+    .user-menu__avatar {
+        margin: 0;
+    }
+
+    .user-menu__name {
+        display: none;
+    }
+
+    .user-menu-dropdown::before {
+        right: 18px;
+    }
+
+    /* Side Bar */
+    .side-bar {
+        top: 48px;
+        height: calc(100% - 48px);
+    }
+
+    .side-bar--show {
+        display: block;
+    }
+
+    /* Main Block */
+    .main-block {
+        padding: 16px;
+    }
+
+    /* Information bar */
+    .information-bar {
+        padding: 20px;
+    }
+
+    .information-bar__icon {
+        margin-right: 16px;
+    }
+
+    .information-bar-description {
+        margin-right: 0;
+    }
+
+    .information-bar-description__title,
+    .information-bar-description__text {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .information-bar__link {
+        display: none;
+    }
+
+    /* Report */
+    .report__title {
+        font-weight: 500;
+    }
+
+    /* Filter Info */
+    .resellers-filter {
+        display: none;
+    }
+
+    .filter-info__description {
+        display: block;
+    }
+    
+    /* Chart Data */
+    .report-data-cards-data__value {
+        font-size: 14px;
+    }
+
+    .report-data-cards {
+        margin-bottom: 24px;
+    }
+
+    .report-data-cards__item {
+        padding: 8px;
+    }
+
+    .chart-container {
+        height: 228px;
+    }
+
+    .chart-block {
+        flex-direction: column;
+        padding: 16px;
+        height: auto;
+    }
+
+    .report-column-two {
+        display: none;
+        width: 100%;
+    }
+
+    /* Insights */
+    .insights {
+        padding: 16px;
+    }
+
+    .insights-header {
+        margin-bottom: 24px;
+    }
+
+    .insights__title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .insights-subtitle {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 16px;
+    }
+
+    /* Insights Table */
+    .table-head {
+        display: none;
+    }
+
+    .insights-table__row {
+        border-radius: 8px;
+    }
+
+    .insights-table-data {
+        display: inline-block;
+        width: 45%;
+    }
+
+    .insights-table-data--count {
+        display: none;
+    }
+
+    .insights-table-data--count-responsive {
+        display: inline-block;
+        width: 10%;
+        padding-left: 12px;
+        text-align: left;
+    }
+
+    .insights-table-data--product {
+        width: 100%;
+    }
+
+    .insights-table-data--department {
+        display: none;
+    }
+
+    .insights-table-data--number, .insights-table-data--price {
+        text-align: right;
+    }
+
+    /* Insights Footer */
+    .insights-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .insights-table-options {
+        margin-bottom: 16px;
+    }
+}

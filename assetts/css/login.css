@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+    color:#333333;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    background: #142159;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Login Container */
+
+.login {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 48px;
+    min-width: 328px;
+    max-width: 432px;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* login header */
+
+.header {
+    margin-bottom: 32px;
+}
+
+.header__title {
+    display: block;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.header__subtitle {
+    display: block;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+/* login form */
+
+.email, .pass {
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.email__label, .pass__label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.email__input, .pass__input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #555555;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.email__alert {
+    display: none;
+    margin-top: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #F03460;
+}
+
+.email--error .email__label {
+    color: #000000;
+}
+
+.email--error .email__input {
+    border-width: 2px;
+    border-color: #F03460;
+}
+
+.email--error .email__input:focus {
+    outline: none;
+    border-color: #F03460;
+}
+
+.email--error .email__alert {
+    display: block;
+}
+
+.pass-visibility-button {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    right: 16px;
+    bottom: calc(50% - 25px);
+    line-height: 0;
+}
+
+.pass-visibility-button svg:first-child {
+    display: none;
+}
+
+.pass-visibility-button svg:last-child {
+    display: block;
+}
+
+.pass-visibility-button--hidden svg:first-child {
+    display: block;
+}
+
+.pass-visibility-button--hidden svg:last-child {
+    display: none;
+}
+
+/* extra options block */
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.stay-connected__input {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.stay-connected__label {
+    margin-right: auto;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.options__recovery-link {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #425DC7;
+    text-decoration: underline;
+}
+
+/* submit button */
+
+.login-form__button {
+    width: 100%;
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background: #425DC7;
+    border-radius: 8px;
+}
+
+.login-form__button:hover {
+    background: #2E44A1;
+    transition: ease-in-out .3s;
+}
