@@ -1,4 +1,4 @@
-const API_URI = 'https://test-final.b8one.academy'
+const API_URI = 'https://company-dashboard-api.herokuapp.com'
 const STORAGE_LOGIN_STATE_KEY = 'isLogged'
 
 function setLoggedInState(keepConnected) {
